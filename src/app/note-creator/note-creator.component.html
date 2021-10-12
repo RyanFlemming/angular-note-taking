@@ -1,0 +1,20 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        Create a new note
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="titleModel">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Notes go here</mat-label>
+        <textarea matInput [(ngModel)]="contentModel" type="string" cdkTextareaAutosize cdkAutosizeMinRows="20" cdkAutosizeMaxRows="20" min="1"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" (click)="createNewNote(titleModel, contentModel)"> Add Note</button>
+</mat-expansion-panel>

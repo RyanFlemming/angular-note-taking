@@ -1,0 +1,32 @@
+<mat-toolbar>
+    <button mat-icon-button  (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    Responsive sidebar navigation
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+        <img class="avatar mat-elevation-z8" src="https://i.redd.it/cpk12az6mo141.png">
+        <h4 class="name">John Smith</h4>
+        <p class="designation">Note Taking Extraordinaire</p>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button (click)="CreateNewFolder()" class="menu-button">
+            <mat-icon>fiber_new</mat-icon>
+            <span>New Folder</span>
+        </button>
+    </mat-sidenav>
+
+    <app-note-creator></app-note-creator>
+    <app-note-cards></app-note-cards>
+
+
+</mat-sidenav-container>

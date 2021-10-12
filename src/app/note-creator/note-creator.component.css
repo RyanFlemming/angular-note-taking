@@ -1,0 +1,14 @@
+mat-form-field,
+mat-expansion-panel,
+mat-expansion-panel-header {
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    height: auto!important;
+}
+
+mat-expansion-panel {
+    align-items:center;
+    align-content: center;
+    width:340px;
+}
