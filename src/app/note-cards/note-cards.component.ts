@@ -1,9 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-export class NewNote {
-  title: string = '';
-  content: string = '';
-}
+import { Component, Input, Output, OnInit } from '@angular/core';
+import { NewNote } from './new-note.model';
 
 @Component({
   selector: 'app-note-cards',
@@ -11,18 +7,25 @@ export class NewNote {
   styleUrls: ['./note-cards.component.css']
 })
 export class NoteCardsComponent implements OnInit {
-//note: NewNote = new NewNote;
-/*
-titleModel: string = '';
-contentModel: string = '';
-*/
+  @Input() titleModel!: string;
+  @Input() contentModel!: string;
+  newNotes: NewNote[] = [];
 
-@Input() newNotes!: NewNote[];
-
-  constructor() {
+  constructor(private newNote?: NewNote) {
   }
 
   ngOnInit(): void {
+  }
+
+  @Output() public SaveNote(title: string, content: string) {
+    const newNote: NewNote = {
+      title: this.titleModel,
+      content: this.contentModel
+    };
+    console.log(title, content)
+    this.newNotes.push(newNote);
+    this.titleModel = this.contentModel = '';
+
   }
 
 }
