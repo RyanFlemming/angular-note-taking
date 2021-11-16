@@ -18,7 +18,6 @@ import { NoteCardsComponent } from './note-cards/note-cards.component';
 import { NoteCreatorComponent } from './note-creator/note-creator.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { UserComponent } from './user/user.component';
-import { NewNote } from './note-cards/new-note.model';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,7 @@ import { NewNote } from './note-cards/new-note.model';
     FlexLayoutModule,
     MatExpansionModule
   ],
-  providers: [NewNote],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
