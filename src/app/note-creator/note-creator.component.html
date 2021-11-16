@@ -16,5 +16,5 @@
         <textarea matInput [(ngModel)]="contentModel" type="string" cdkTextareaAutosize cdkAutosizeMinRows="20" cdkAutosizeMaxRows="20" min="1"></textarea>
       </mat-form-field>
 
-      <button mat-raised-button color="accent" (click)="createNewNote(titleModel, contentModel)"> Add Note</button>
+      <button mat-raised-button color="accent" (click)="SaveNote(titleModel, contentModel)"> Add Note</button>
 </mat-expansion-panel>
