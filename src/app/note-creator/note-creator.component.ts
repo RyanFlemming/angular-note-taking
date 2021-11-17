@@ -1,11 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NewNote } from '../note-cards/new-note.model';
-/*
-export class NewNote {
-  title: string = '';
-  content: string = '';
-}
-*/
+import { NoteService } from "../note.service";
 
 @Component({
   selector: 'app-note-creator',
@@ -15,23 +9,16 @@ export class NewNote {
 export class NoteCreatorComponent {
 titleModel: string = '';
 contentModel: string = '';
-@Input() newNotes: NewNote[] = [];
 
-  constructor() {
+  constructor(private noteService: NoteService) {
   }
 
   ngOnInit() {
     
   }
 
-  public SaveNote(titleModel: string, contentModel: string) {
-    const newNote: NewNote = {
-      title: titleModel,
-      content: contentModel
-    };
-    console.log(titleModel, contentModel)
-    this.newNotes.push(newNote);
-    
+  public SaveNote(title: string, content: string) {
+    this.noteService.addNote(title, content);
   }
 
 }
