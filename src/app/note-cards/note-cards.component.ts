@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 import { Note } from "../note";
@@ -23,4 +23,5 @@ export class NoteCardsComponent implements OnInit {
     this.notes = this.noteService.getNotes();
   }
 
+  // TO DO: Create a user service. Make this talk to the note service.
 }
