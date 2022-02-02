@@ -1,35 +1,27 @@
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-<mat-expansion-panel>
+  <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-description>
         Create a new note
         <mat-icon>account_circle</mat-icon>
       </mat-panel-description>
     </mat-expansion-panel-header>
-
-      <mat-form-field appearance="fill" class="form-group">
-        <mat-label>Title</mat-label>
-        <input matInput type="text"
-        id="title"
-        class="form-control"
-        name="title"
-        ngModel
-        required>
-      </mat-form-field>
   
-      <mat-form-field appearance="fill" class="form-group">
-        <mat-label>Notes go here</mat-label>
-        <textarea matInput type="text" cdkTextareaAutosize cdkAutosizeMinRows="20" cdkAutosizeMaxRows="20" min="1"
-        id="content"
-        class="form-control"
-        name="content"
-        ngModel
-        required
-        ></textarea>
-      </mat-form-field>
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" id="title" class="form-control" name="title" ngModel required>
+    </mat-form-field>
 
-      <button mat-raised-button class="btn btn-success" color="accent" type="onSubmit()" [disabled]="!f.valid">Add Note</button>
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Notes go here</mat-label>
+      <textarea matInput type="text" cdkTextareaAutosize cdkAutosizeMinRows="20" cdkAutosizeMaxRows="20" min="1"
+        id="content" class="form-control" name="content" ngModel required></textarea>
+    </mat-form-field>
 
-</mat-expansion-panel>
+    <button mat-raised-button class="btn btn-success" color="accent" type="onSubmit()" [disabled]="!f.valid">Add
+      Note
+    </button>
+
+  </mat-expansion-panel>
 </form>
 <app-note-cards></app-note-cards>
