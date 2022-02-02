@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { NoteService } from "../note.service";
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-note-creator',
@@ -7,9 +8,6 @@ import { NoteService } from "../note.service";
   styleUrls: ['./note-creator.component.css']
 })
 export class NoteCreatorComponent {
-titleModel: string = '';
-contentModel: string = '';
-
   constructor(private noteService: NoteService) {
   }
 
@@ -17,8 +15,12 @@ contentModel: string = '';
     
   }
 
-  public SaveNote(title: string, content: string) {
-    this.noteService.addNote(title, content);
+  onSubmit(form: NgForm){
+    console.log("Note title is : " + form.value.title)
+    console.log("Note content is: " + form.value.content)
+    this.noteService.addNote(form.value.title, form.value.content);
   }
+
+  // TO DO: Add an edit function
 
 }
