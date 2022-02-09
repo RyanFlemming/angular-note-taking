@@ -1,0 +1,9 @@
+.content {
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    justify-content: start;
+    align-items: flex-start;
+    font-size: 2rem;
+    color: lightgrey;
+}
