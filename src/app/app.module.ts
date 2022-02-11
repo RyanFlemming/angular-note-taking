@@ -17,15 +17,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NoteCardsComponent } from './note-cards/note-cards.component';
 import { NoteCreatorComponent } from './note-creator/note-creator.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     NoteCardsComponent,
-    NoteCreatorComponent,
-    UserComponent
+    NoteCreatorComponent
   ],
   imports: [
     BrowserModule,
