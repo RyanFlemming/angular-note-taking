@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-
-import { Note } from "../note";
-import { NoteService } from "../note.service";
+import { Note } from "../interfaces/note";
+import { NoteService } from "../services/note.service";
 
 @Component({
   selector: 'app-note-cards',
@@ -20,7 +18,7 @@ export class NoteCardsComponent implements OnInit {
   }
 
   getNotes(): void {
-    this.notes = this.noteService.getNotes();
+    this.notes = this.noteService.getAllNotes();
   }
 
   // TO DO: Create a user service. Make this talk to the note service.
