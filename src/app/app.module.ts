@@ -13,16 +13,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NoteCardsComponent } from './note-cards/note-cards.component';
 import { NoteCreatorComponent } from './note-creator/note-creator.component';
+import { NoteListComponent } from './note-list/note-list.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    NoteCardsComponent,
-    NoteCreatorComponent
+    NoteCreatorComponent,
+    NoteListComponent
   ],
   imports: [
     BrowserModule,
