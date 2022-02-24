@@ -11,10 +11,11 @@ export class NoteService {
 
   constructor() { }
 
-  addNote(title: string, content: string): void {
+  addNote(_title: string, _content: string): void {
     const note: Note = {
-      title: title,
-      content: content
+      id: '_' + Math.random().toString(36).substring(2, 9),
+      title: _title,
+      content: _content
     };
 
     this.notes.push(note);
@@ -24,12 +25,9 @@ export class NoteService {
     return this.notes;
   }
 
-  /* printNotes(): void {
-    for (var index in this.notes) {
-      console.log(this.notes[index]);
-    }
-  } */
-
-  // TO DO: Add categories to notes
-  // TO DO: Return note to edit to calling function - in note-creator
+  /*
+  Implement an 'update' function
+  Use observer pattern and have note-creator respond to click events on the 'Edit' option
+  Do lookup using id, send result to note-creator
+  */
 }
