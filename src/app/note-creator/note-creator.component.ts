@@ -2,6 +2,7 @@ import { Component, Input, ViewChild} from '@angular/core';
 import { NoteService } from '../services/note.service';
 import { Note } from '../interfaces/note';
 import { NgForm } from '@angular/forms';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-note-creator',
@@ -10,6 +11,8 @@ import { NgForm } from '@angular/forms';
 })
 export class NoteCreatorComponent {
   @Input() _notes: Note[] = [];
+  createNote: boolean = true;
+
   
   constructor(private noteService: NoteService) {
   }
@@ -20,6 +23,7 @@ export class NoteCreatorComponent {
 
   private _getAllNotes(): void {
     this._notes = this.noteService.getAllNotes();
+    console.log(this._notes)
   }
 
   onSubmit(form: NgForm){
@@ -29,6 +33,9 @@ export class NoteCreatorComponent {
     this._getAllNotes();
   }
 
-  // TO DO: Add an edit function
+  /*
+  Subscribe to 'update' observable on note service
+  Set createNote boolean to false
+  */
 
 }

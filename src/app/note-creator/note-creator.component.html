@@ -2,7 +2,8 @@
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-description>
-        Create a new note
+        <h2 *ngIf="createNote">Create Note</h2>
+        <h2 *ngIf="!createNote">Edit Note</h2>
         <mat-icon>account_circle</mat-icon>
       </mat-panel-description>
     </mat-expansion-panel-header>
@@ -18,7 +19,7 @@
         id="content" class="form-control" name="content" ngModel required></textarea>
     </mat-form-field>
 
-    <button mat-raised-button class="btn btn-success" color="accent" type="onSubmit()" [disabled]="!f.valid">Add
+    <button mat-raised-button class="btn btn-success" color="accent" type="submit" [disabled]="!f.valid">Add
       Note
     </button>
   </mat-expansion-panel>

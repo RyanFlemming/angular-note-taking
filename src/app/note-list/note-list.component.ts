@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Note } from "../interfaces/note";
 import { NoteService } from "../services/note.service";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-note-list',
@@ -12,7 +13,4 @@ export class NoteListComponent {
 
   constructor(private noteService: NoteService) {
   }
-
-
-  // TO DO: Create a user service. Make this talk to the note service.
 }
